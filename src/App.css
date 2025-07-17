@@ -1,0 +1,35 @@
+.dark {
+    background-color: black;
+    color: whitesmoke;
+    transition: all 1s ease;
+}
+
+.light{
+    background-color: white;
+    color: black;
+    transition: all 1s ease;
+}
+
+/* Estilos base para pantallas grandes */
+.contenedorPrincipal {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+/* para tablets */
+@media ((min-width: 601px) and (max-width: 1000px)) {
+    .contenedorPrincipal {
+        grid-template-columns: 1fr;
+        /* Se apila en una columna */
+    }
+}
+
+/* Para móviles */
+@media (max-width: 600px) {
+    .contenedorPrincipal {
+        grid-template-columns: 1fr;
+        /* Se apila en una columna */
+    }
+}
