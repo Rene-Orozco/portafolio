@@ -9,17 +9,16 @@ import estilos from './CartasProyectos.module.css';
 const mostrar = objProyectos.map((elemento, index) => (
     <div key={index} className={estilos.cartas}>
         <span>{elemento.name}</span>
-        <video
-            src={elemento.video}
-            width={300}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className={estilos.videos}
-        />
         <a href={elemento.url} target="_blank" rel="noopener noreferrer">
-            <button>Ir al proyecto</button>
+            <video
+                src={elemento.video}
+                width={300}
+                muted
+                loop
+                onMouseEnter={(e) => e.target.play()}
+                onMouseLeave={(e) => e.target.pause()}
+                className={estilos.videos}
+            />
         </a>
     </div>
 ));

@@ -1,11 +1,12 @@
-.acomodar{
+.acomodar {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     max-height: 80vh;
-    overflow-y: auto; 
+    overflow-y: auto;
 }
+
 .cartas {
     display: flex;
     flex-direction: column;
@@ -15,4 +16,10 @@
 
 .videos {
     border-radius: 1rem;
+}
+
+.videos:hover {
+    cursor: pointer;
+    transition: all .5s ease;
+    transform: scale(1.1);
 }
