@@ -19,12 +19,15 @@ function Home() {
   return (
     <div className={estilos.contenedorHome}>
       <h1>Renee Orozco</h1>
-      <img src={miImagen} alt="Foto" width={150} className={estilos.miFoto} />
+      <img src={miImagen} alt="Foto" width={100} className={estilos.miFoto} />
       <p className={estilos.miTexto}>
         Desarrollador Full Stack en formación, con enfoque en Frontend.<br />
-        familiarizado con React y Next.js, con interés en aprender Angular y Vue.<br />
-        Conocimientos en backend con Node.js y Express, y bases de datos con MongoDB, Próximo a incorporar PostgreSQL.
-        Apasionado por crear interfaces modernas, funcionales y centradas en el usuario.
+        familiarizado con React y Next.js, <br/>
+        con interés en aprender Angular y Vue.<br />
+        <br />
+        Conocimientos en backend con Node.js y Express,<br />
+        bases de datos con MongoDB,<br /> 
+        Próximo a incorporar PostgreSQL.
       </p>
       <div className={estilos.tecnologias}>
         <img src={html} alt="html" width={50} className={estilos.flotar}/>

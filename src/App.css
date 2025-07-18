@@ -1,14 +1,36 @@
+body {
+    background-color: var(--fondo);
+    color: var(--texto);
+}
+
+p {
+    font-family: 'Courier New', Courier, monospace;
+}
+
 .dark {
-    background-color: black;
-    color: whitesmoke;
+    --fondo: black;
+    --texto: whitesmoke;
+    --sombra: rgba(255, 255, 255, 0.9);
+    --sombra0: rgba(255, 255, 255, 0.9);
+    --sombra50: rgba(255, 255, 255, 0.7);
+    --sombra100: rgba(255, 255, 255, 0.9);
+    --activo: #8c31ee;
     transition: all 1s ease;
 }
 
-.light{
-    background-color: white;
-    color: black;
+.light {
+    --fondo: whitesmoke;
+    --texto: black;
+    --sombra: rgba(0, 0, 0, 0.9);
+    --sombra0: rgba(0, 0, 0, 0.9);
+    --sombra50: rgba(0, 0, 0, 0.7);
+    --sombra100: rgba(0, 0, 0, 0.9);
+    --activo: #7deb95;
     transition: all 1s ease;
 }
+
+
+
 
 /* Estilos base para pantallas grandes */
 .contenedorPrincipal {
