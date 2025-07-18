@@ -40,6 +40,7 @@ p {
     grid-template-columns: 3fr 2fr;
     gap: 1rem;
     margin: 1rem;
+    justify-content: center;
 }
 
 /* para tablets */
@@ -47,6 +48,7 @@ p {
     .contenedorPrincipal {
         grid-template-columns: 1fr;
         /* Se apila en una columna */
+        justify-content: center;
     }
 }
 
@@ -55,5 +57,8 @@ p {
     .contenedorPrincipal {
         grid-template-columns: 1fr;
         /* Se apila en una columna */
+
+        align-items: center;
+        justify-content: center;
     }
 }
