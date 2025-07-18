@@ -1,17 +1,16 @@
 .contenedorHome {
-    height: 100%;
     background: var(--fondoVidrio) ; /* Más translúcido */              
     backdrop-filter: blur(10px) saturate(1.5);
-    border: 1px solid var(--sombra50);  /* Borde blanco suave */
-    border-radius: 1rem;                        /* Bordes redondeados */
-    padding: .5rem;
-
+    box-shadow: -4px 0px 0px var(--sombra50); /* Desplazamiento negativo en X */
+    border-radius: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 1rem;
 
     text-align: center;
 }
 
 .miTexto {
-    margin: 1rem;
     text-align: justify;
     overflow-y: auto;
 }

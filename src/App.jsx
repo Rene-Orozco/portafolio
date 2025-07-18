@@ -1,64 +1,56 @@
+import React, { useContext, useEffect, Suspense, lazy } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
-import './App.css'
+import './App.css';
 
-// pages
-import Home from './pages/Home/Home'
-import Proyectos from './pages/Proyectos/Proyectos'
-import Habilidades from './pages/Habilidades/Habilidades'
-import Contactos from './pages/Contactos/Contactos'
+// Páginas
+import Home from './pages/Home/Home';
+const Proyectos = lazy(() => import('./pages/Proyectos/Proyectos'));
+const Habilidades = lazy(() => import('./pages/Habilidades/Habilidades'));
+const Contactos = lazy(() => import('./pages/Contactos/Contactos'));
 
-// componente
-import Navegacion from './components/Navegacion/Navegacion'
-import { useContext, useEffect } from 'react';
+// Componentes
+import Navegacion from './components/Navegacion/Navegacion';
 import { BotonContexto } from './context/NavegacionContexto';
 
-
 function App() {
+  const { seleccion } = useContext(BotonContexto);
 
-  // llamamos el contexto
-  const {seleccion} = useContext(BotonContexto);
-
-  // aplicamos segin cambia
-useEffect(() => {
-  // Obtenemos el body
-  const body = document.body;
-
-  // Limpiamos primero cualquier clase anterior
-  body.classList.remove('dark', 'light');
-
-  // Agregamos la clase según el estado de seleccion
-  if (seleccion) {
-    body.classList.add('dark');
-  } else {
-    body.classList.add('light');
-  }
-}, [seleccion]);
-
-
+  useEffect(() => {
+    const body = document.body;
+    body.classList.remove('dark', 'light');
+    body.classList.add(seleccion ? 'dark' : 'light');
+  }, [seleccion]);
 
   return (
-    <div >
-      <div className='contenedorPrincipal'>
-        {/* menú de navegación */}
-        <Navegacion />
+    <div className="padre">
+      <div className="contenedorPrincipal">
+        {/* Navegación (parte superior) */}
+        <header className="zonaNavegacion" style={{ gridColumn: '1 / -1' }}>
+          <Navegacion />
+        </header>
 
-        {/* renderiza el perfil */}
-        <Home />
+        {/* Contenido dinámico (izquierda) */}
+        <main className="zonaContenido">
+          <Suspense fallback={<p>Cargando...</p>}>
+            <Routes>
+              <Route path="/" element={<Navigate to="/Proyectos" replace />} />
+              <Route path="/Proyectos" element={<Proyectos />} />
+              <Route path="/Habilidades" element={<Habilidades />} />
+              <Route path="/Contactos" element={<Contactos />} />
+            </Routes>
+          </Suspense>
+        </main>
 
-        <Routes>
-          {/* Redirige automáticamente de "/" a "/Proyectos" */}
-          <Route path="/" element={<Navigate to="/Proyectos" replace />} />
-
-          {/* Ruta a Proyectos */}
-          <Route path="/Proyectos" element={<Proyectos />} />
-
-          {/* Ruta a Habilidades */}
-          <Route path="/Habilidades" element={<Habilidades />} />
-
-          {/* Ruta a Contactos */}
-          <Route path="/Contactos" element={<Contactos />} />
-        </Routes>
+        {/* Presentación personal (derecha) */}
+        <aside className="zonaHome">
+          <Home />
+        </aside>
       </div>
+
+      {/* Footer */}
+      <footer className="footer">
+        <p>Todos los derechos reservados ©Renee {new Date().getFullYear()}</p>
+      </footer>
     </div>
   );
 }

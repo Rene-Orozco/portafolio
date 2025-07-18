@@ -1,15 +1,25 @@
+/* Ajustes base */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: var(--fondo);
     color: var(--texto);
+    margin: 1rem;
 }
 
 p {
     font-family: 'Courier New', Courier, monospace;
 }
 
+/* Modo oscuro */
 .dark {
-    --fondo: black;
-    --fondoVidrio: rgba(66, 65, 65, 0.5);
+    --fondo: #0e0e10;/* Gris oscuro casi negro */
+    --fondoVidrio: rgba(30, 30, 30, 0.6);/* efecto vidrio oscuro suave */
     --texto: whitesmoke;
     --sombra: rgba(255, 255, 255, 0.9);
     --sombra0: rgba(255, 255, 255, 0.9);
@@ -19,9 +29,10 @@ p {
     transition: all 1s ease;
 }
 
+/* Modo claro */
 .light {
-    --fondo: whitesmoke;
-    --fondoVidrio: whitesmoke;
+    --fondo: #f5f7fa;/* Gris muy claro, casi blanco */
+    --fondoVidrio: rgba(255, 255, 255, 0.6);/* efecto vidrio blanco suave */
     --texto: black;
     --sombra: rgba(0, 0, 0, 0.9);
     --sombra0: rgba(0, 0, 0, 0.9);
@@ -31,34 +42,57 @@ p {
     transition: all 1s ease;
 }
 
+/* Layout principal */
+.padre {
+    min-height: 100vh;
+    /* Ocupa toda la altura visible */
+    display: flex;
+    flex-direction: column;
+    /* Distribuye en columna */
+    justify-content: space-between;
+    /* Empuja el footer hacia abajo */
+}
 
-
-
-/* Estilos base para pantallas grandes */
+/* Contenedor de contenido principal */
 .contenedorPrincipal {
     display: grid;
     grid-template-columns: 3fr 2fr;
-    gap: 1rem;
-    margin: 1rem;
     justify-content: center;
+    flex: 1;
+    /* Ocupa el espacio restante */
+    gap: 1rem;
 }
 
-/* para tablets */
-@media ((min-width: 601px) and (max-width: 1000px)) {
+/* Responsive para tablets */
+@media (min-width: 601px) and (max-width: 1000px) {
     .contenedorPrincipal {
         grid-template-columns: 1fr;
-        /* Se apila en una columna */
         justify-content: center;
     }
 }
 
-/* Para móviles */
+/* Responsive para móviles */
 @media (max-width: 600px) {
     .contenedorPrincipal {
         grid-template-columns: 1fr;
-        /* Se apila en una columna */
-
-        align-items: center;
         justify-content: center;
+        align-items: center;
     }
 }
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: var(--texto);
+    background-color: var(--fondoVidrio);
+    width: 100%;
+}
+
+/* extras */
+.zonaContenido {
+    padding: 1rem;
+}
+
+

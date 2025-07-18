@@ -9,7 +9,7 @@ function Navegacion() {
   const datos = [
     { rute: "/Proyectos", name: "Proyectos" },
     { rute: "/Habilidades", name: "Habilidades" },
-    { rute: "/Contacto", name: "Contacto" },
+    { rute: "/Contactos", name: "Contactos" },
   ];
 
   // llamamos el contexto
