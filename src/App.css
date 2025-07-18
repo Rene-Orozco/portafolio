@@ -9,6 +9,7 @@ p {
 
 .dark {
     --fondo: black;
+    --fondoVidrio: rgba(66, 65, 65, 0.5);
     --texto: whitesmoke;
     --sombra: rgba(255, 255, 255, 0.9);
     --sombra0: rgba(255, 255, 255, 0.9);
@@ -20,6 +21,7 @@ p {
 
 .light {
     --fondo: whitesmoke;
+    --fondoVidrio: whitesmoke;
     --texto: black;
     --sombra: rgba(0, 0, 0, 0.9);
     --sombra0: rgba(0, 0, 0, 0.9);

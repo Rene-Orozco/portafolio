@@ -1,11 +1,9 @@
 .contenedorHome {
-    height: auto;
-    background-color: var(--fondo); /* Más translúcido */
-    backdrop-filter: blur(10px);                /* Más difuminado */
-    -webkit-backdrop-filter: blur(10px);        /* Soporte Safari */
-    border: 1px solid rgba(255, 255, 255, 0.2);  /* Borde blanco suave */
+    height: 100%;
+    background: var(--fondoVidrio) ; /* Más translúcido */              
+    backdrop-filter: blur(10px) saturate(1.5);
+    border: 1px solid var(--sombra50);  /* Borde blanco suave */
     border-radius: 1rem;                        /* Bordes redondeados */
-    box-shadow: 0 4px 30px var(--sombra);   /* Sombra ligera */
     padding: .5rem;
 
 

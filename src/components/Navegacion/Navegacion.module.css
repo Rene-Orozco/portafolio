@@ -5,12 +5,11 @@
     list-style: none;
     padding: 1rem;
 
-    background-color: rgba(255, 255, 255, 0.4); /* Más translúcido */
-    backdrop-filter: blur(10px);                /* Más difuminado */
+    background-color: var(--fondoVidrio); /* Más translúcido */
+    backdrop-filter: blur(10px) saturate(1.5);            /* Más difuminado */
     -webkit-backdrop-filter: blur(10px);        /* Soporte Safari */
-    border: 1px solid rgba(255, 255, 255, 0.2);  /* Borde blanco suave */
+    border: 1px solid var(--sombra50);  /* Borde blanco suave */
     border-radius: 1rem;                        /* Bordes redondeados */
-    box-shadow: 0 4px 30px  var(--sombra50);   /* Sombra ligera */
 
 }
 
@@ -18,7 +17,10 @@
 input {
     padding: .5rem;
     border-radius: .5rem;
-    box-shadow: 0px 2px 2px var(--sombra);
+    box-shadow: 0px 2px 2px var(--sombra0);
+    background: var(--fondoVidrio) ; /* Más translúcido */              
+    backdrop-filter: blur(10px);
+    color: var(--texto);
 }
 
 input:hover {
@@ -31,7 +33,7 @@ input:hover {
 .activo {
     cursor: pointer;
     transition: all .2s ease;
-    box-shadow: 0px 0px 16px var(--activo);
+    box-shadow: 0px 5px 2px var(--activo);
 }
 
 
