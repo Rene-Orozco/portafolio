@@ -51,6 +51,8 @@ p {
     /* Distribuye en columna */
     justify-content: space-between;
     /* Empuja el footer hacia abajo */
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 /* Contenedor de contenido principal */
