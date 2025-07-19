@@ -9,12 +9,17 @@ import { BrowserRouter } from 'react-router-dom'
 // importamos el contexto
 import { NavegacionProvider } from './context/NavegacionContexto.jsx'
 
+// importamos el otro contexto
+import { HamburguesaProvider } from './context/HamburguesaContexto.jsx'
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <NavegacionProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </NavegacionProvider>
+    <HamburguesaProvider>
+      <NavegacionProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </NavegacionProvider>
+    </HamburguesaProvider>
   </StrictMode>,
 )

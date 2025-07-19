@@ -1,18 +1,21 @@
 .contenedorHome {
-    background: var(--fondoVidrio) ; /* Más translúcido */              
-    backdrop-filter: blur(10px) saturate(1.5);
-    box-shadow: -4px 0px 0px var(--sombra50); /* Desplazamiento negativo en X */
-    border-radius: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin: 1rem;
-
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--fondoVidrio);
+  backdrop-filter: blur(10px) saturate(1.5);
+  box-shadow: -4px 0px 0px var(--sombra50);
+  border-radius: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
 }
 
 .miTexto {
-    text-align: justify;
-    overflow-y: auto;
+  text-align: justify;
+  overflow-y: auto;
 }
 
 .miFoto {
@@ -20,21 +23,57 @@
 }
 
 @keyframes flotar {
-  0%   { transform: translateY(0px); box-shadow: 0px 3px 10px var(--sombra0)}
-  50%  { transform: translateY(-1px); box-shadow: 0px 6px 12px var(--sombra50)}
-  100% { transform: translateY(0px); box-shadow: 0px 3px 10px var(--sombra100)}
+  0% {
+    transform: translateY(0px);
+    box-shadow: 0px 3px 10px var(--sombra0);
+  }
+  50% {
+    transform: translateY(-1px);
+    box-shadow: 0px 6px 12px var(--sombra50);
+  }
+  100% {
+    transform: translateY(0px);
+    box-shadow: 0px 3px 10px var(--sombra100);
+  }
 }
 
-
 .tecnologias {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
 }
 
 .flotar {
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   animation: flotar 3s ease-in-out infinite;
+}
+
+/* Overlay visible en pantalla pequeña */
+.visible {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive: ocultar y luego mostrar estilo overlay */
+@media (max-width: 1000px) {
+  .contenedorHome {
+    display: flex;
+    position: absolute;
+    top: 7rem;
+    left: 0;
+    width: auto;
+    height: 100dvh;
+    z-index: 1;
+    background: var(--fondoVidrio);
+    backdrop-filter: blur(10px) saturate(1.5);
+    overflow-y: auto;
+    border-radius: 0;
+    box-shadow: none;
+    justify-content: center;
+    align-items: center;
+  }
 }
