@@ -24,24 +24,24 @@ function Navegacion() {
 
   // llamamos el contexto
   const { seleccion, setSeleccion } = useContext(BotonContexto);
-  const {btnHambur, setBtnHambur} = useContext(HamburguesaContexto);
+  const {ocultar, setocultar} = useContext(HamburguesaContexto);
 
   // funcion que setea el nuevo valor
-  function cambio() {
+  function cambioB() {
     setSeleccion(!seleccion);
   }
 
   // funcion seta el valor  nuevo en contexto hamburguesa
   function cambioMostrar() {
-    setBtnHambur(!btnHambur);
+    setocultar(!ocultar);
   }
-
+  
   return (
     <div>
       <nav>
         <ul className={estilos.lista}>
           <div className={estilos.toggle}>
-            <input type="checkbox" onClick={cambio} />
+            <input type="checkbox" onClick={cambioB} />
             <label></label>
           </div>
 

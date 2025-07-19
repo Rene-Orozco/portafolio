@@ -50,30 +50,4 @@
   animation: flotar 3s ease-in-out infinite;
 }
 
-/* Overlay visible en pantalla pequeña */
-.visible {
-  display: flex !important;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
-/* Responsive: ocultar y luego mostrar estilo overlay */
-@media (max-width: 1000px) {
-  .contenedorHome {
-    display: flex;
-    position: absolute;
-    top: 7rem;
-    left: 0;
-    width: auto;
-    height: 100dvh;
-    z-index: 1;
-    background: var(--fondoVidrio);
-    backdrop-filter: blur(10px) saturate(1.5);
-    overflow-y: auto;
-    border-radius: 0;
-    box-shadow: none;
-    justify-content: center;
-    align-items: center;
-  }
-}

@@ -1,24 +1,30 @@
-// lo requerimos desde react
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
-// creamos el contexto
+// Creamos el contexto
 const HamburguesaContexto = createContext();
 
+function HamburguesaProvider(props) {
+  const [cambio, setCambio] = useState(window.innerWidth < 1000);
+  const [ocultar, setocultar] = useState(false);
 
-// creamos el provider
-function HamburguesaProvider(props){
+  useEffect(() => {
+    function manejarResize() {
+      setCambio(window.innerWidth < 1000);
+    }
 
-    // estado que pasaremos
-    const [btnHambur, setBtnHambur] = useState(true);
+    // Ejecutar al montar
+    manejarResize();
 
+    // Escuchar cambios de tamaño
+    window.addEventListener("resize", manejarResize);
+    return () => window.removeEventListener("resize", manejarResize);
+  }, []);
 
-    return (
-
-        <HamburguesaContexto.Provider value={{btnHambur, setBtnHambur}}>
-            {props.children}
-        </HamburguesaContexto.Provider>
-    )
+  return (
+    <HamburguesaContexto.Provider value={{ cambio, setCambio, ocultar, setocultar }}>
+      {props.children}
+    </HamburguesaContexto.Provider>
+  );
 }
 
-
-export {HamburguesaContexto, HamburguesaProvider};
+export { HamburguesaContexto, HamburguesaProvider };

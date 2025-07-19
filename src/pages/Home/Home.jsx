@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
 // importamos la imagen
 import miImagen from '../../assets/mia.png';
@@ -15,41 +15,37 @@ import node from '../../assets/node.png';
 // importamos estilos
 import estilos from './Home.module.css';
 
-// importamos el estado del contexto
-import { HamburguesaContexto } from '../../context/HamburguesaContexto';
+
 
 function Home() {
-  // imporamos los estados del contexto hamburguesa
-  const { btnHambur } = useContext(HamburguesaContexto);
+
 
   return (
     <>
-      {btnHambur && (
-        <div className={`${estilos.contenedorHome} ${btnHambur ? estilos.visible : ''}`}>
-          <h1>Renee Orozco</h1>
-          <img src={miImagen} alt="Foto" width={100} className={estilos.miFoto} />
-          <p className={estilos.miTexto}>
-            Desarrollador Full Stack en formación, con enfoque en Frontend.<br />
-            familiarizado con React y Next.js, <br />
-            con interés en aprender Angular y Vue.<br />
-            <br />
-            Conocimientos en backend con Node.js y Express,<br />
-            bases de datos con MongoDB,<br />
-            Próximo a incorporar PostgreSQL.
-          </p>
-          <div className={estilos.tecnologias}>
-            <img src={html} alt="html" width={50} className={estilos.flotar} />
-            <img src={css} alt="css" width={50} className={estilos.flotar} />
-            <img src={js} alt="js" width={50} className={estilos.flotar} />
-            <img src={ts} alt="ts" width={50} className={estilos.flotar} />
-            <img src={node} alt="node" width={50} className={estilos.flotar} />
-            <img src={express} alt="express" width={50} className={estilos.flotar} />
-            <img src={mongo} alt="mongo" width={50} className={estilos.flotar} />
-            <img src={react} alt="react" width={50} className={estilos.flotar} />
-            <img src={nexst} alt="nexst" width={50} className={estilos.flotar} />
-          </div>
+      <div className={`${estilos.contenedorHome}`}>
+        <h1>Renee Orozco</h1>
+        <img src={miImagen} alt="Foto" width={100} className={estilos.miFoto} />
+        <p className={estilos.miTexto}>
+          Desarrollador Full Stack en formación, con enfoque en Frontend.<br />
+          familiarizado con React y Next.js, <br />
+          con interés en aprender Angular y Vue.<br />
+          <br />
+          Conocimientos en backend con Node.js y Express,<br />
+          bases de datos con MongoDB,<br />
+          Próximo a incorporar PostgreSQL.
+        </p>
+        <div className={estilos.tecnologias}>
+          <img src={html} alt="html" width={50} className={estilos.flotar} />
+          <img src={css} alt="css" width={50} className={estilos.flotar} />
+          <img src={js} alt="js" width={50} className={estilos.flotar} />
+          <img src={ts} alt="ts" width={50} className={estilos.flotar} />
+          <img src={node} alt="node" width={50} className={estilos.flotar} />
+          <img src={express} alt="express" width={50} className={estilos.flotar} />
+          <img src={mongo} alt="mongo" width={50} className={estilos.flotar} />
+          <img src={react} alt="react" width={50} className={estilos.flotar} />
+          <img src={nexst} alt="nexst" width={50} className={estilos.flotar} />
         </div>
-      )}
+      </div>
     </>
   )
 }
