@@ -7,6 +7,8 @@ import Home from './pages/Home/Home';
 const Proyectos = lazy(() => import('./pages/Proyectos/Proyectos'));
 const Habilidades = lazy(() => import('./pages/Habilidades/Habilidades'));
 const Contactos = lazy(() => import('./pages/Contactos/Contactos'));
+import PageError from './pages/PageError/PageError';
+
 
 // Componentes
 import Navegacion from './components/Navegacion/Navegacion';
@@ -15,6 +17,7 @@ import { BotonContexto } from './context/NavegacionContexto';
 
 // importamos contexto menuHamburguesa
 import { HamburguesaContexto } from './context/HamburguesaContexto';
+
 
 
 function App() {
@@ -28,8 +31,8 @@ function App() {
 
 
   // importamos el contexto 
-  const { cambio, ocultar  } = useContext(HamburguesaContexto);
-  
+  const { cambio, ocultar } = useContext(HamburguesaContexto);
+
 
   return (
     <>
@@ -54,6 +57,7 @@ function App() {
                   <Route path="/Proyectos" element={<Proyectos />} />
                   <Route path="/Habilidades" element={<Habilidades />} />
                   <Route path="/Contactos" element={<Contactos />} />
+                  <Route path='*' element={<PageError />} />
                 </Routes>
               </Suspense>
             </main>
@@ -80,6 +84,7 @@ function App() {
                   <Route path="/Proyectos" element={<Proyectos />} />
                   <Route path="/Habilidades" element={<Habilidades />} />
                   <Route path="/Contactos" element={<Contactos />} />
+                  <Route path='*' element={<PageError />} />
                 </Routes>
               </Suspense>
             </main>

@@ -1,0 +1,47 @@
+.error404 {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--texto);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error404 h1 {
+  font-size: 8rem;
+  margin: 0;
+  color: #8c31ee;
+  animation: float 2s ease-in-out infinite;
+}
+
+.error404 p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.error404 button {
+  background-color: #8c31ee;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  transition: transform 0.3s, background 0.3s;
+  cursor: pointer;
+}
+
+.error404 a:hover {
+  background-color: #a14cff;
+  transform: scale(1.05);
+  border-radius: 1rem;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
