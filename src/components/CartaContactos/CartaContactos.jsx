@@ -10,7 +10,7 @@ import whatsapp from '../../assets/whatsapp.png';
 function CartaContactos() {
 
     // estado de mostrar msj
-    const [desicion, setDesicion] = useState(true);
+    const [desicion, setDesicion] = useState(false);
     function cambiar() {
         setDesicion(!desicion)
     }
